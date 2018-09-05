@@ -2,17 +2,24 @@
 import unittest
 import csv
 
-NUM_OF_LANGS = 5
 
-new = [[], [], [], [], []]
+langs = [
+    [],  # key
+    [],
+    [],
+    [],
+    [],
+    []
+]
 
 with open('t.csv', newline='') as csvfile:
     reader = csv.reader(csvfile, delimiter='\t', quotechar='|')
     for row in reader:
         key = row[0]
         if key and not key.startswith("//"):
-            for i, translation in enumerate(row[1:]):
-                new[i].append(translation)
+            for i, translation in enumerate(row):
+                langs[i].append(translation)
 
-
-print(new)
+for lang in langs:
+    for key, word in zip(langs[0], lang):
+        print ("<string name=\"{}\">{}</string>".format(key, word))
