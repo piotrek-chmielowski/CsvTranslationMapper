@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-import unittest
 import csv
 
 lang_names = ["en", "pl", "ua", "ru", "pt"]
