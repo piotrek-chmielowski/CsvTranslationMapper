@@ -2,6 +2,7 @@
 import unittest
 import csv
 
+lang_names = ["en", "pl", "ua", "ru", "pt"]
 
 langs = [
     [],  # key
@@ -20,9 +21,8 @@ with open('t.csv', newline='') as csvfile:
             for i, translation in enumerate(row):
                 langs[i].append(translation)
 
-lang_names = ["en", "pl", "ua", "ru", "pt"]
 
-for lang, words in zip(lang_names, langs):
+for lang, words in zip(lang_names, langs[1:]):
     print (lang)
     for key, word in zip(langs[0], words):
         print ("<string name=\"{}\">{}</string>".format(key, word))
