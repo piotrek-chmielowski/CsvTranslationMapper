@@ -1,4 +1,8 @@
 #!/usr/bin/python3
+
+# This script reads translations stored in CSV format and prints them to the stdout in Android strings.xml format.
+# CSV file format: key, en, pl, ua, pt
+
 import csv
 
 lang_names = ["en", "pl", "ua", "ru", "pt"]
